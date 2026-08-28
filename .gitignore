@@ -20,3 +20,7 @@ Thumbs.db
 
 # 本地私有工作副本（LeetHub 原始代码存档，不入库）
 LeetCode-Raw/
+
+# 内部维护文件（本地保留，不上传公开仓库）
+AGENTS.md
+模板/
