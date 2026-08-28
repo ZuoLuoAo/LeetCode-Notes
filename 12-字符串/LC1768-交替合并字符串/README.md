@@ -8,6 +8,8 @@ status: 初次
 first_date: 2026-08-29
 last_review: 2026-08-29
 link: https://leetcode.cn/problems/merge-strings-alternately/
+leet_dir: 1894-merge-strings-alternately
+last_leet_commit: 25702011118768bec443ecab98062e3368ea0a66
 ---
 
 # LC1768 · 交替合并字符串（Merge Strings Alternately）
