@@ -61,20 +61,28 @@ class Solution:
 
 ## 题解思路
 
-官方解法 · 方法一：直接模拟 —— 按索引同时遍历两个字符串，`i < len(word1)` 就取 `word1[i]`，`i < len(word2)` 就取 `word2[i]`；不用预先区分长短，短的取完后长的自然继续输出。Python 用 `zip_longest(word1, word2, fillvalue='')` 可以一行完成。
+官方解法 · 方法一：直接模拟 —— 用双指针 `i`、`j` 同时遍历两个字符串，`while i < m or j < n` 保证只要某个串还有字符就继续；`i < m` 就取 `word1[i]`，`j < n` 就取 `word2[j]`。不用预先区分长短，短的取完后长的自然继续输出。
 
 ## 官方题解代码
 
-来源：力扣官方题解 · 方法一 直接模拟（经 [doocs/leetcode 镜像](https://github.com/doocs/leetcode/blob/main/solution/1700-1799/1768.Merge%20Strings%20Alternately/README.md) 整理；Python 省略的 `import` 语句已补全）。
+来源：力扣官方题解 · 方法一 直接模拟（Python3 为官方原文，C++ 同法）。题解页：https://leetcode.cn/problems/merge-strings-alternately/solution/
 
 ### Python
 
 ```python
-from itertools import zip_longest
-
 class Solution:
     def mergeAlternately(self, word1: str, word2: str) -> str:
-        return ''.join(a + b for a, b in zip_longest(word1, word2, fillvalue=''))
+        m, n = len(word1), len(word2)
+        i = j = 0
+        ans = []
+        while i < m or j < n:
+            if i < m:
+                ans.append(word1[i])
+                i += 1
+            if j < n:
+                ans.append(word2[j])
+                j += 1
+        return ''.join(ans)
 ```
 
 ### C++
@@ -99,7 +107,7 @@ public:
 | 维度 | 我的代码 | 官方题解 |
 | --- | --- | --- |
 | 思路 | 先区分长短，公共部分交替填位，尾部追加 | 直接按索引同时取两个串，不区分长短 |
-| 结构 | 3 个循环 + 长度预计算 | 1 个循环（Python 一行） |
+| 结构 | 3 个循环 + 长度预计算 | 1 个 while 循环（双指针） |
 | 命名 | maxstr / long / resultstr，语义模糊 | 无额外变量，m、n 直观 |
 | 复杂度 | O(m+n) 时间 / O(m+n) 空间 | O(m+n) 时间 / O(1) 空间（不计答案） |
 | 可读性 | range 起止步长需心算，易错 | 直译题意，几乎不会写错 |
