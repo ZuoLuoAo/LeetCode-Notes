@@ -4,12 +4,12 @@ title: 交替合并字符串
 aliases: [Merge Strings Alternately]
 difficulty: 简单
 tags: [字符串, 双指针]
-status: 初次
+status: 复习中
 first_date: 2026-08-29
-last_review: 2026-08-29
+last_review: 2026-08-30
 link: https://leetcode.cn/problems/merge-strings-alternately/
 leet_dir: 1894-merge-strings-alternately
-last_leet_commit: 25702011118768bec443ecab98062e3368ea0a66
+last_leet_commit: fa155b6e0cc54367513cd9737cd26e97efb0724b
 ---
 
 # LC1768 · 交替合并字符串（Merge Strings Alternately）
@@ -50,6 +50,28 @@ class Solution:
         return resultstr
 ```
 
+## 我的代码（第二次 AC）
+
+来源：LeetCode-Raw 原始提交（`1894-merge-strings-alternately.py`，commit `fa155b6`），原样内嵌，一字不改。
+
+```python
+class Solution:
+    def mergeAlternately(self, word1: str, word2: str) -> str:
+        i = 0
+        ans = []
+
+        while i <= len(word1) or i <= len(word2):
+            if i < len(word1):
+                ans.append(word1[i])
+            
+            if i < len(word2):
+                ans.append(word2[i])
+            
+            i += 1
+        
+        return ''.join(ans)
+```
+
 ## 我的代码总结
 
 - 核心思路：先判断哪个串更长（`maxstr`），公共长度部分交替填入 `result` 的偶数/奇数位，再把长串多出的尾部 `append` 进去。
@@ -60,6 +82,7 @@ class Solution:
   4. 尾部剩余字符先切片再循环 `append`，其实可以直接 `result.extend(...)`。
   5. 命名偏模糊：`maxstr`、`long`、`resultstr` 含义不直观。
 - 值得肯定：最终用 `''.join(result)` 拼接而不是逐字符 `+`，思路是对的。
+- 第二次 AC（2026-08-30）：单指针 + 一个 while 循环交替取字符，思路已贴近官方双指针模拟，代码量约减半。小瑕疵：循环条件 `i <= len(...)` 会在两个串取完后多空转一次，官方 `i < m or j < n` 更严谨。
 
 ## 题解思路
 
@@ -116,6 +139,8 @@ public:
 
 学到的一点：交替合并的本质是"按索引同时取两个串"，不需要预先区分长短——短的取完自然结束，多出的部分由长串尾部自然补齐。
 
+> 2026-08-30 第二次 AC 已改为单指针 while 模拟（与官方双指针思路一致），代码量约减半；上表对比仍以第一次 AC 为基准。
+
 ## 复杂度分析
 
 | 解法 | 时间复杂度 | 空间复杂度 |
@@ -133,3 +158,4 @@ public:
 ## 复习记录
 
 - 2026-08-29：首次 AC；思路为先区分长短再交替填入，代码偏冗长，已对照官方模拟解法。
+- 2026-08-30：重刷；改用单指针 while 交替取字符，贴近官方模拟思路；循环条件用 `<` 可避免一次空转。
