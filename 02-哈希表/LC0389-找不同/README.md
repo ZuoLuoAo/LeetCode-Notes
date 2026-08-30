@@ -4,12 +4,12 @@ title: 找不同
 aliases: [Find the Difference]
 difficulty: 简单
 tags: [哈希表, 位运算, 排序]
-status: 初次
+status: 复习中
 first_date: 2026-08-29
-last_review: 2026-08-29
+last_review: 2026-08-30
 link: https://leetcode.cn/problems/find-the-difference/
 leet_dir: 0389-find-the-difference
-last_leet_commit: a60b5fd
+last_leet_commit: 74a9250
 ---
 
 # LC0389 · 找不同（Find the Difference）
@@ -56,6 +56,19 @@ class Solution:
                     return i
 ```
 
+## 我的代码（第二次 AC）
+
+来源：LeetCode-Raw 原始提交（`0389-find-the-difference.py`，commit `74a9250`），原样内嵌，一字不改。
+
+```python
+class Solution:
+    def findTheDifference(self, s: str, t: str) -> str:
+        sums = sum(ord(i) for i in s)
+        sumt = sum(ord(i) for i in t)
+
+        return chr(sumt - sums)
+```
+
 ## 我的代码总结
 
 - 核心思路：分别统计 `s`、`t` 的字符计数到两个字典；若键集合不同，返回 `t` 中独有的键；否则找到计数不同的那个键。
@@ -65,6 +78,7 @@ class Solution:
   3. 分支里遍历 `dic_t.keys()` 找计数不同的键，逻辑没问题但代码偏长；官方"一表双向增减"更短。
   4. 双字典方案整体 O(n) 但代码量大；求和 / 异或是一行级实现，更优雅。
 - 值得肯定：想到了比较键集合 + 计数，覆盖了"新增字符已存在/不存在"两种情况，思路完整。
+- 第二次 AC（2026-08-30）：直接采用 ASCII 求和差值（`sum(ord(...))` 相减），与官方方法二一致，6 行完成——"多一个字符"的求和套路已掌握。
 
 ## 题解思路
 
@@ -119,6 +133,8 @@ class Solution:
 
 学到的一点："多出来的那一个"类问题，优先想三种武器：计数抵消、求和差值、异或抵消；本题求和与异或都是 O(n) 且常数极小。
 
+> 2026-08-30 第二次 AC 已改写为 ASCII 求和差值（即官方方法二），代码从 33 行降至 6 行；上表对比仍以第一次 AC 为基准。
+
 ## 复杂度分析
 
 | 解法 | 时间复杂度 | 空间复杂度 |
@@ -137,3 +153,4 @@ class Solution:
 ## 复习记录
 
 - 2026-08-29：首次 AC；双字典思路完整但冗长，已对照官方学习计数抵消、ASCII 求和、异或三种写法。
+- 2026-08-30：重刷；改用 ASCII 求和差值，思路已贴近官方方法二，代码从 33 行降到 6 行。
