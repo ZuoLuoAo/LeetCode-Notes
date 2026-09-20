@@ -20,25 +20,10 @@ last_leet_commit: 56e4c0c
 
 ## 我的代码（第一次 AC）
 
-来源：LeetCode-Raw 原始提交（`0028-find-the-index-of-the-first-occurrence-in-a-string.py`，commit `56e4c0c`），原样内嵌，一字不改。
+来源：LeetCode-Raw 原始提交（commit `56e4c0c`），代码见 `solution.py`，与力扣 AC 提交一字不差。
 
-```python
-class Solution:
-    def strStr(self, haystack: str, needle: str) -> int:
-        num = 0
-        ans = []
-        
-        for i in range(len(haystack)):
-            if haystack[i] == needle[0]:
-                if haystack[i+1 : i+len(needle)] == needle[1 : len(needle)]:
-                    num = i 
-                    ans.append(num)
-               
-        print(ans)
-        if not ans:
-            return -1
-        else:
-            return ans[0]
+```dataviewjs
+dv.paragraph("```python\n" + await dv.io.load("12-字符串/LC0028-找出字符串中第一个匹配项的下标/solution.py") + "\n```")
 ```
 
 ## 我的代码总结
@@ -61,44 +46,14 @@ class Solution:
 
 ### Python（方法一：暴力匹配）
 
-```python
-class Solution:
-    def strStr(self, haystack: str, needle: str) -> int:
-        n, m = len(haystack), len(needle)
-        for i in range(n - m + 1):
-            for j in range(m):
-                if haystack[i + j] != needle[j]:
-                    break
-            else:
-                return i
-        return -1
+```dataviewjs
+dv.paragraph("```python\n" + await dv.io.load("12-字符串/LC0028-找出字符串中第一个匹配项的下标/editorial-暴力匹配.py") + "\n```")
 ```
 
 ### Python（方法二：KMP，进阶选学）
 
-```python
-class Solution:
-    def strStr(self, haystack: str, needle: str) -> int:
-        n, m = len(haystack), len(needle)
-        if m == 0:
-            return 0
-        nxt = [0] * m
-        j = 0
-        for i in range(1, m):
-            while j > 0 and needle[i] != needle[j]:
-                j = nxt[j - 1]
-            if needle[i] == needle[j]:
-                j += 1
-            nxt[i] = j
-        j = 0
-        for i in range(n):
-            while j > 0 and haystack[i] != needle[j]:
-                j = nxt[j - 1]
-            if haystack[i] == needle[j]:
-                j += 1
-            if j == m:
-                return i - m + 1
-        return -1
+```dataviewjs
+dv.paragraph("```python\n" + await dv.io.load("12-字符串/LC0028-找出字符串中第一个匹配项的下标/editorial-kmp.py") + "\n```")
 ```
 
 > 注：KMP 按官方思路整理的 Python3 实现，细节以题解页为准。

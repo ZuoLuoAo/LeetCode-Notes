@@ -20,53 +20,18 @@ last_leet_commit: 74a9250
 
 ## 我的代码（第一次 AC）
 
-来源：LeetCode-Raw 原始提交（`0389-find-the-difference.py`，commit `a60b5fd`），原样内嵌，一字不改。
+来源：LeetCode-Raw 原始提交（commit `a60b5fd`），代码见 `solution-v1.py`，与力扣 AC 提交一字不差。
 
-```python
-class Solution:
-    def findTheDifference(self, s: str, t: str) -> str:
-        dic_s = {}
-        dic_t = {}
-
-        for i in s:
-            if i in dic_s:
-                dic_s[i] += 1
-            else:
-                dic_s[i] = 0
-        
-        for i in t:
-            if i in dic_t:
-                dic_t[i] += 1
-            else:
-                dic_t[i] = 0
-        
-        list_s = list(dic_s.keys())
-        list_t = list(dic_t.keys())
-        list_s.sort()
-        list_t.sort()
-
-        if list_s != list_t:
-            for i in dic_t.keys():
-                if i not in dic_s:
-                    return i
-
-        else:
-            for i in dic_t.keys():
-                if dic_s[i] != dic_t[i]:
-                    return i
+```dataviewjs
+dv.paragraph("```python\n" + await dv.io.load("02-哈希表/LC0389-找不同/solution-v1.py") + "\n```")
 ```
 
 ## 我的代码（第二次 AC）
 
-来源：LeetCode-Raw 原始提交（`0389-find-the-difference.py`，commit `74a9250`），原样内嵌，一字不改。
+来源：LeetCode-Raw 原始提交（commit `74a9250`），代码见 `solution.py`，与力扣 AC 提交一字不差。
 
-```python
-class Solution:
-    def findTheDifference(self, s: str, t: str) -> str:
-        sums = sum(ord(i) for i in s)
-        sumt = sum(ord(i) for i in t)
-
-        return chr(sumt - sums)
+```dataviewjs
+dv.paragraph("```python\n" + await dv.io.load("02-哈希表/LC0389-找不同/solution.py") + "\n```")
 ```
 
 ## 我的代码总结
@@ -90,35 +55,20 @@ class Solution:
 
 ### Python（方法一：计数）
 
-```python
-class Solution:
-    def findTheDifference(self, s: str, t: str) -> str:
-        cnt = {}
-        for ch in s:
-            cnt[ch] = cnt.get(ch, 0) + 1
-        for ch in t:
-            cnt[ch] = cnt.get(ch, 0) - 1
-            if cnt[ch] < 0:
-                return ch
+```dataviewjs
+dv.paragraph("```python\n" + await dv.io.load("02-哈希表/LC0389-找不同/editorial-计数.py") + "\n```")
 ```
 
 ### Python（方法二：求和）
 
-```python
-class Solution:
-    def findTheDifference(self, s: str, t: str) -> str:
-        return chr(sum(map(ord, t)) - sum(map(ord, s)))
+```dataviewjs
+dv.paragraph("```python\n" + await dv.io.load("02-哈希表/LC0389-找不同/editorial-求和.py") + "\n```")
 ```
 
 ### Python（方法三：位运算）
 
-```python
-class Solution:
-    def findTheDifference(self, s: str, t: str) -> str:
-        res = 0
-        for ch in s + t:
-            res ^= ord(ch)
-        return chr(res)
+```dataviewjs
+dv.paragraph("```python\n" + await dv.io.load("02-哈希表/LC0389-找不同/editorial-位运算.py") + "\n```")
 ```
 
 ## 代码对比

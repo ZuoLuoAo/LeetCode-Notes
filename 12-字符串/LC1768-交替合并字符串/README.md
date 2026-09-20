@@ -22,54 +22,18 @@ last_leet_commit: fa155b6e0cc54367513cd9737cd26e97efb0724b
 
 ## 我的代码（第一次 AC）
 
-来源：LeetCode-Raw 原始提交，原样内嵌（仅 Python；C++ 本次未提交）。
+来源：LeetCode-Raw 原始提交（commit `2570201`），代码见 `solution-v1.py`，与力扣 AC 提交一字不差（仅 Python；C++ 本次未提交）。
 
-```python
-class Solution:
-    def mergeAlternately(self, word1: str, word2: str) -> str:
-        long = len(word1) - len(word2)
-
-        maxstr = word1
-        if long < 0:
-            maxstr = word2
-
-        result = [0]*(len(maxstr) - abs(long))*2
-
-
-        for i, j in zip(word1, range(0, (len(maxstr)-abs(long))*2-1, 2)):
-            result[j] = i
-
-        for i, j in zip(word2, range(1, (len(maxstr)-abs(long))*2, 2)):
-            result[j] = i
-
-        for k in maxstr[len(maxstr)-abs(long):len(maxstr)]:
-            result.append(k) 
-
-        resultstr = ''.join(result)
-
-        return resultstr
+```dataviewjs
+dv.paragraph("```python\n" + await dv.io.load("12-字符串/LC1768-交替合并字符串/solution-v1.py") + "\n```")
 ```
 
 ## 我的代码（第二次 AC）
 
-来源：LeetCode-Raw 原始提交（`1894-merge-strings-alternately.py`，commit `fa155b6`），原样内嵌，一字不改。
+来源：LeetCode-Raw 原始提交（commit `fa155b6`），代码见 `solution.py`，与力扣 AC 提交一字不差。
 
-```python
-class Solution:
-    def mergeAlternately(self, word1: str, word2: str) -> str:
-        i = 0
-        ans = []
-
-        while i <= len(word1) or i <= len(word2):
-            if i < len(word1):
-                ans.append(word1[i])
-            
-            if i < len(word2):
-                ans.append(word2[i])
-            
-            i += 1
-        
-        return ''.join(ans)
+```dataviewjs
+dv.paragraph("```python\n" + await dv.io.load("12-字符串/LC1768-交替合并字符串/solution.py") + "\n```")
 ```
 
 ## 我的代码总结
@@ -94,37 +58,14 @@ class Solution:
 
 ### Python
 
-```python
-class Solution:
-    def mergeAlternately(self, word1: str, word2: str) -> str:
-        m, n = len(word1), len(word2)
-        i = j = 0
-        ans = []
-        while i < m or j < n:
-            if i < m:
-                ans.append(word1[i])
-                i += 1
-            if j < n:
-                ans.append(word2[j])
-                j += 1
-        return ''.join(ans)
+```dataviewjs
+dv.paragraph("```python\n" + await dv.io.load("12-字符串/LC1768-交替合并字符串/editorial-直接模拟.py") + "\n```")
 ```
 
 ### C++
 
-```cpp
-class Solution {
-public:
-    string mergeAlternately(string word1, string word2) {
-        int m = word1.size(), n = word2.size();
-        string ans;
-        for (int i = 0; i < m || i < n; ++i) {
-            if (i < m) ans += word1[i];
-            if (i < n) ans += word2[i];
-        }
-        return ans;
-    }
-};
+```dataviewjs
+dv.paragraph("```cpp\n" + await dv.io.load("12-字符串/LC1768-交替合并字符串/editorial.cpp") + "\n```")
 ```
 
 ## 代码对比

@@ -20,33 +20,10 @@ last_leet_commit: 02ded29
 
 ## 我的代码（第一次 AC）
 
-来源：LeetCode-Raw 原始提交（`0242-valid-anagram.py`，commit `02ded29`），原样内嵌，一字不改。
+来源：LeetCode-Raw 原始提交（commit `02ded29`），代码见 `solution.py`，与力扣 AC 提交一字不差。
 
-```python
-class Solution:
-    def isAnagram(self, s: str, t: str) -> bool:
-        if len(s) == len(t):
-            dic_s = {}
-            dic_t = {}
-
-            for i, j in zip(s, t):
-                if i not in dic_s:
-                    dic_s[i] = 0
-                else:
-                    dic_s[i] += 1
-
-                if j not in dic_t:
-                    dic_t[j] = 0
-                else:
-                    dic_t[j] += 1
-            
-            if dic_s == dic_t:
-                return True
-            else:
-                return False
-
-        else:
-            return False
+```dataviewjs
+dv.paragraph("```python\n" + await dv.io.load("02-哈希表/LC0242-有效的字母异位词/solution.py") + "\n```")
 ```
 
 ## 我的代码总结
@@ -68,27 +45,14 @@ class Solution:
 
 ### Python（方法一：排序）
 
-```python
-class Solution:
-    def isAnagram(self, s: str, t: str) -> bool:
-        return sorted(s) == sorted(t)
+```dataviewjs
+dv.paragraph("```python\n" + await dv.io.load("02-哈希表/LC0242-有效的字母异位词/editorial-排序.py") + "\n```")
 ```
 
 ### Python（方法二：哈希表）
 
-```python
-class Solution:
-    def isAnagram(self, s: str, t: str) -> bool:
-        if len(s) != len(t):
-            return False
-        table = {}
-        for ch in s:
-            table[ch] = table.get(ch, 0) + 1
-        for ch in t:
-            table[ch] = table.get(ch, 0) - 1
-            if table[ch] < 0:
-                return False
-        return True
+```dataviewjs
+dv.paragraph("```python\n" + await dv.io.load("02-哈希表/LC0242-有效的字母异位词/editorial-哈希表.py") + "\n```")
 ```
 
 ## 代码对比
