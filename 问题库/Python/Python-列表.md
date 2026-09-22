@@ -1,6 +1,6 @@
 ---
 分类: Python
-ask_count: 6
+ask_count: 8
 appear_count: 3
 status: 已解决
 created: 2026-08-29
@@ -80,3 +80,38 @@ if len(lst) == 0:
 | 日期 | 来源题目 | 解答要点 |
 | --- | --- | --- |
 | 2026-08-29 | 无 | `if not 列表` 或 `len(列表) == 0` 判断空列表 |
+
+## 交换两个元素
+
+`nums[i], nums[i+1] = nums[i+1], nums[i]` 是 Python 的元组解包，一步交换两个元素，不需要临时变量。
+
+```python
+nums = [1, 2, 3]
+i = 0
+nums[i], nums[i + 1] = nums[i + 1], nums[i]
+print(nums)     # [2, 1, 3]
+
+# 等价于用临时变量：
+tmp = nums[i]
+nums[i] = nums[i + 1]
+nums[i + 1] = tmp
+```
+
+可以一次换多个：左右两边个数相等即可。
+
+```python
+nums = [1, 2, 3, 4]
+nums[0], nums[1], nums[2], nums[3] = nums[3], nums[2], nums[1], nums[0]
+print(nums)     # [4, 3, 2, 1]
+
+# 整个列表反转：
+nums.reverse()          # 原地反转
+nums[::-1]              # 返回反转后的新列表
+```
+
+### 提问记录
+
+| 日期 | 来源题目 | 解答要点 |
+| --- | --- | --- |
+| 2026-09-20 | 无 | `a, b = b, a` 元组解包交换两个元素，无需临时变量 |
+| 2026-09-20 | 无 | 可一次换多个，左右元素个数相等即可；整表反转用 `reverse()` 或 `[::-1]` |
