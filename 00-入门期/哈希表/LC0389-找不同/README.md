@@ -23,7 +23,7 @@ last_leet_commit: 74a9250
 来源：LeetCode-Raw 原始提交（commit `a60b5fd`），代码见 `solution-v1.py`，与力扣 AC 提交一字不差。
 
 ```dataviewjs
-dv.paragraph("```python\n" + await dv.io.load("02-哈希表/LC0389-找不同/solution-v1.py") + "\n```")
+dv.paragraph("```python\n" + await dv.io.load("00-入门期/哈希表/LC0389-找不同/solution-v1.py") + "\n```")
 ```
 
 ## 我的代码（第二次 AC）
@@ -31,7 +31,7 @@ dv.paragraph("```python\n" + await dv.io.load("02-哈希表/LC0389-找不同/sol
 来源：LeetCode-Raw 原始提交（commit `74a9250`），代码见 `solution.py`，与力扣 AC 提交一字不差。
 
 ```dataviewjs
-dv.paragraph("```python\n" + await dv.io.load("02-哈希表/LC0389-找不同/solution.py") + "\n```")
+dv.paragraph("```python\n" + await dv.io.load("00-入门期/哈希表/LC0389-找不同/solution.py") + "\n```")
 ```
 
 ## 我的代码总结
@@ -56,19 +56,19 @@ dv.paragraph("```python\n" + await dv.io.load("02-哈希表/LC0389-找不同/sol
 ### Python（方法一：计数）
 
 ```dataviewjs
-dv.paragraph("```python\n" + await dv.io.load("02-哈希表/LC0389-找不同/editorial-计数.py") + "\n```")
+dv.paragraph("```python\n" + await dv.io.load("00-入门期/哈希表/LC0389-找不同/editorial-计数.py") + "\n```")
 ```
 
 ### Python（方法二：求和）
 
 ```dataviewjs
-dv.paragraph("```python\n" + await dv.io.load("02-哈希表/LC0389-找不同/editorial-求和.py") + "\n```")
+dv.paragraph("```python\n" + await dv.io.load("00-入门期/哈希表/LC0389-找不同/editorial-求和.py") + "\n```")
 ```
 
 ### Python（方法三：位运算）
 
 ```dataviewjs
-dv.paragraph("```python\n" + await dv.io.load("02-哈希表/LC0389-找不同/editorial-位运算.py") + "\n```")
+dv.paragraph("```python\n" + await dv.io.load("00-入门期/哈希表/LC0389-找不同/editorial-位运算.py") + "\n```")
 ```
 
 ## 代码对比

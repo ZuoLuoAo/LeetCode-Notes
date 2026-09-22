@@ -23,7 +23,7 @@ last_leet_commit: 56e4c0c
 来源：LeetCode-Raw 原始提交（commit `56e4c0c`），代码见 `solution.py`，与力扣 AC 提交一字不差。
 
 ```dataviewjs
-dv.paragraph("```python\n" + await dv.io.load("12-字符串/LC0028-找出字符串中第一个匹配项的下标/solution.py") + "\n```")
+dv.paragraph("```python\n" + await dv.io.load("00-入门期/字符串/LC0028-找出字符串中第一个匹配项的下标/solution.py") + "\n```")
 ```
 
 ## 我的代码总结
@@ -47,13 +47,13 @@ dv.paragraph("```python\n" + await dv.io.load("12-字符串/LC0028-找出字符�
 ### Python（方法一：暴力匹配）
 
 ```dataviewjs
-dv.paragraph("```python\n" + await dv.io.load("12-字符串/LC0028-找出字符串中第一个匹配项的下标/editorial-暴力匹配.py") + "\n```")
+dv.paragraph("```python\n" + await dv.io.load("00-入门期/字符串/LC0028-找出字符串中第一个匹配项的下标/editorial-暴力匹配.py") + "\n```")
 ```
 
 ### Python（方法二：KMP，进阶选学）
 
 ```dataviewjs
-dv.paragraph("```python\n" + await dv.io.load("12-字符串/LC0028-找出字符串中第一个匹配项的下标/editorial-kmp.py") + "\n```")
+dv.paragraph("```python\n" + await dv.io.load("00-入门期/字符串/LC0028-找出字符串中第一个匹配项的下标/editorial-kmp.py") + "\n```")
 ```
 
 > 注：KMP 按官方思路整理的 Python3 实现，细节以题解页为准。

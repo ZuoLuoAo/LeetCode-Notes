@@ -23,7 +23,7 @@ last_leet_commit: 02ded29
 来源：LeetCode-Raw 原始提交（commit `02ded29`），代码见 `solution.py`，与力扣 AC 提交一字不差。
 
 ```dataviewjs
-dv.paragraph("```python\n" + await dv.io.load("02-哈希表/LC0242-有效的字母异位词/solution.py") + "\n```")
+dv.paragraph("```python\n" + await dv.io.load("00-入门期/哈希表/LC0242-有效的字母异位词/solution.py") + "\n```")
 ```
 
 ## 我的代码总结
@@ -46,13 +46,13 @@ dv.paragraph("```python\n" + await dv.io.load("02-哈希表/LC0242-有效的字�
 ### Python（方法一：排序）
 
 ```dataviewjs
-dv.paragraph("```python\n" + await dv.io.load("02-哈希表/LC0242-有效的字母异位词/editorial-排序.py") + "\n```")
+dv.paragraph("```python\n" + await dv.io.load("00-入门期/哈希表/LC0242-有效的字母异位词/editorial-排序.py") + "\n```")
 ```
 
 ### Python（方法二：哈希表）
 
 ```dataviewjs
-dv.paragraph("```python\n" + await dv.io.load("02-哈希表/LC0242-有效的字母异位词/editorial-哈希表.py") + "\n```")
+dv.paragraph("```python\n" + await dv.io.load("00-入门期/哈希表/LC0242-有效的字母异位词/editorial-哈希表.py") + "\n```")
 ```
 
 ## 代码对比

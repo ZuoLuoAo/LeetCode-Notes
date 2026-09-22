@@ -25,7 +25,7 @@ last_leet_commit: fa155b6e0cc54367513cd9737cd26e97efb0724b
 来源：LeetCode-Raw 原始提交（commit `2570201`），代码见 `solution-v1.py`，与力扣 AC 提交一字不差（仅 Python；C++ 本次未提交）。
 
 ```dataviewjs
-dv.paragraph("```python\n" + await dv.io.load("12-字符串/LC1768-交替合并字符串/solution-v1.py") + "\n```")
+dv.paragraph("```python\n" + await dv.io.load("00-入门期/字符串/LC1768-交替合并字符串/solution-v1.py") + "\n```")
 ```
 
 ## 我的代码（第二次 AC）
@@ -33,7 +33,7 @@ dv.paragraph("```python\n" + await dv.io.load("12-字符串/LC1768-交替合并�
 来源：LeetCode-Raw 原始提交（commit `fa155b6`），代码见 `solution.py`，与力扣 AC 提交一字不差。
 
 ```dataviewjs
-dv.paragraph("```python\n" + await dv.io.load("12-字符串/LC1768-交替合并字符串/solution.py") + "\n```")
+dv.paragraph("```python\n" + await dv.io.load("00-入门期/字符串/LC1768-交替合并字符串/solution.py") + "\n```")
 ```
 
 ## 我的代码总结
@@ -59,13 +59,13 @@ dv.paragraph("```python\n" + await dv.io.load("12-字符串/LC1768-交替合并�
 ### Python
 
 ```dataviewjs
-dv.paragraph("```python\n" + await dv.io.load("12-字符串/LC1768-交替合并字符串/editorial-直接模拟.py") + "\n```")
+dv.paragraph("```python\n" + await dv.io.load("00-入门期/字符串/LC1768-交替合并字符串/editorial-直接模拟.py") + "\n```")
 ```
 
 ### C++
 
 ```dataviewjs
-dv.paragraph("```cpp\n" + await dv.io.load("12-字符串/LC1768-交替合并字符串/editorial.cpp") + "\n```")
+dv.paragraph("```cpp\n" + await dv.io.load("00-入门期/字符串/LC1768-交替合并字符串/editorial.cpp") + "\n```")
 ```
 
 ## 代码对比
