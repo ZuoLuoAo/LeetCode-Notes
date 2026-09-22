@@ -42,7 +42,7 @@ dv.paragraph("```python\n" + await dv.io.load("00-入门期/字符串/LC0028-找
 ## 复盘
 
 - **核心思路**：找第一个匹配位置，第一次命中就能返回，不要先收集再挑。
-- **踩的坑**：① 残留了一行 `print(ans)` 调试输出；② 切片写成 `haystack[i+1 : i+len(needle)] == needle[1 : len(needle)]`，前后两段要对应好才不出错，`haystack[i : i+m] == needle` 更直白；③ 直接取 `needle[0]`，题目虽然保证非空，换成允许空串的题就会 IndexError。
+- **踩的坑**：① 用 `print` 验完忘了删，把调试输出一起提交上去了（收录时已从代码里删掉）；② 切片写成 `haystack[i+1 : i+len(needle)] == needle[1 : len(needle)]`，前后两段要对应好才不出错，`haystack[i : i+m] == needle` 更直白；③ 直接取 `needle[0]`，题目虽然保证非空，换成允许空串的题就会 IndexError。
 - **学到的**：Python 的 `for-else`——内层循环没被 `break` 打断时走 `else` 分支，正好用来表达"整段都匹配上了"。
 - **关联问题**：[[Python-列表#判断列表是否为空]]
 

@@ -12,8 +12,6 @@ class Solution:
                     num = i 
                     ans.append(num)
                
-        # 调试用的输出，正式代码里不用留
-        print(ans)
         # 一个都没命中就返回 -1，否则返回第一个命中位置
         if not ans:
             return -1
